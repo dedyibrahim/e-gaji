@@ -1,0 +1,171 @@
+.atas_top{
+
+background-color: #168A35;
+}
+.icon_atas_top{
+
+
+}
+.atas_tengah{
+background-color: #eee;
+}
+
+.pencarian input{
+  border: medium none;
+  color: #168A35;
+  border: 1px #168A35 solid; 
+  font-family: 'roboto';
+  font-size: 14px;
+  font-weight: 300;
+  height: 40px;
+  outline: medium none;
+  padding-left: 10px;
+  width: 100%;
+  
+    
+}
+.pencarian{
+    padding-top: 5px;
+}
+.menu_atas{
+
+
+background: rgba(22,138,53,1);
+background: -moz-linear-gradient(-45deg, rgba(22,138,53,1) 0%, rgba(84,178,255,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(22,138,53,1)), color-stop(100%, rgba(84,178,255,1)));
+background: -webkit-linear-gradient(-45deg, rgba(22,138,53,1) 0%, rgba(84,178,255,1) 100%);
+background: -o-linear-gradient(-45deg, rgba(22,138,53,1) 0%, rgba(84,178,255,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(22,138,53,1) 0%, rgba(84,178,255,1) 100%);
+background: linear-gradient(135deg, rgba(22,138,53,1) 0%, rgba(84,178,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#168a35', endColorstr='#54b2ff', GradientType=1 );
+
+    border-radius: 0px 0px 10px 10px; 
+
+}
+.fixed{
+    margin: 0px auto;
+    z-index: 1;
+    display: inline-block;
+    position: fixed;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    color: #f8f8f8;
+    
+		  
+}
+.footer-bawah {
+ text-align: center;
+color: #fff; 
+background: rgba(22,138,53,1);
+background: -moz-linear-gradient(-45deg, rgba(22,138,53,1) 0%, rgba(84,178,255,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(22,138,53,1)), color-stop(100%, rgba(84,178,255,1)));
+background: -webkit-linear-gradient(-45deg, rgba(22,138,53,1) 0%, rgba(84,178,255,1) 100%);
+background: -o-linear-gradient(-45deg, rgba(22,138,53,1) 0%, rgba(84,178,255,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(22,138,53,1) 0%, rgba(84,178,255,1) 100%);
+background: linear-gradient(135deg, rgba(22,138,53,1) 0%, rgba(84,178,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#168a35', endColorstr='#54b2ff', GradientType=1 );
+
+  padding-top: 10px;
+}
+.list_keranjang{
+  color: #168A35;
+  font-size: 40px;
+  height: 40px;
+  
+    
+}
+.ikon-keranjang{
+ margin:10px;     
+  
+}
+.buton-bungkus{
+    background:#168A35 ;
+    border: 0 none;
+    border-radius: 0;
+    color: #FFF;
+   
+    font-size: 15px;
+   
+}
+.popover{
+ width:500px;
+ height:auto;
+    
+}
+
+.popover-title{
+   background-color:#168A35;
+   color: #fff;
+                                            
+   }
+   .popover total{
+   background-color: #f60;
+  }
+     .total{
+     background-color: #168A35;
+      color: #fff;
+    font-size: 20px;
+    border-radius: 0px 0px 5px 5px ;
+    text-align: center;
+
+    }
+    .menupoper a{
+    background-color:#eee; 
+    color: #168A35;
+    
+    }
+    .checkout-atas{
+     border: 1px #168A35 solid ; 
+     color:#168A35;
+     margin-bottom:10px;
+     padding-bottom:10px; 
+     border-radius: 0px 0px 10px 10px;   
+        
+    }
+    .checkout-bawah{
+     background-color:#168A35;
+     color:#fff;
+     border-radius: 0px 0px 10px 10px;
+        
+    }
+    .bs-wizard {margin-top: 40px;}
+
+/*Form Wizard*/
+.bs-wizard {border-bottom: solid 1px #168A35; padding: 0 0 10px 0;}
+.bs-wizard > .bs-wizard-step {padding: 0; position: relative;}
+.bs-wizard > .bs-wizard-step + .bs-wizard-step {}
+.bs-wizard > .bs-wizard-step .bs-wizard-stepnum {color: #595959; font-size: 16px; margin-bottom: 5px;}
+.bs-wizard > .bs-wizard-step .bs-wizard-info {color: #999; font-size: 14px;}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: #168A35; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;} 
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: #eee; border-radius: 50px; position: absolute; top: 8px; left: 8px; } 
+.bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 20px 0;}
+.bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: #168A35;}
+.bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {width:100%;}
+.bs-wizard > .bs-wizard-step.active > .progress > .progress-bar {width:50%;}
+.bs-wizard > .bs-wizard-step:first-child.active > .progress > .progress-bar {width:0%;}
+.bs-wizard > .bs-wizard-step:last-child.active > .progress > .progress-bar {width: 100%;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {background-color: #f5f5f5;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {opacity: 0;}
+.bs-wizard > .bs-wizard-step:first-child  > .progress {left: 50%; width: 50%;}
+.bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
+.bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
+/*END Form Wizard*/ 
+
+.langkah_konfirmasi{
+ display: none;   
+}
+.langkah_pengiriman{
+ display: none;   
+}
+.langkah_alamat{
+ display: none;   
+}
+
+.konfirmasi_bayar{
+ margin-top: 10px;   
+    
+    
+}
+
+    
