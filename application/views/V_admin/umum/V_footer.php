@@ -12,7 +12,7 @@
         <!-- /footer content -->
       </div>
     </div>
-   <script src="<?php echo  base_url(); ?>assets/sweetalert.min.js" type="text/javascript"></script>
+     <script src="<?php echo  base_url(); ?>assets/sweetalert.min.js" type="text/javascript"></script>
  <!-- jQuery -->
     <script src="<?php echo base_url('assets'); ?>/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -22,7 +22,7 @@
     <!-- NProgress -->
     <script src="<?php echo base_url('assets'); ?>/vendors/nprogress/nprogress.js"></script>
     <!-- Chart.js -->
-    <script src="<?php echo base_url('assets'); ?>/vendors/Chart.js/dist/Chart.min.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/dist/Chart.min.js"></script>
     <!-- gauge.js -->
     <script src="<?php echo base_url('assets'); ?>/vendors/gauge.js/dist/gauge.min.js"></script>
     <!-- bootstrap-progressbar -->

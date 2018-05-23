@@ -18,6 +18,7 @@ public function index(){
 $this->load->view('V_admin/umum/V_header');
 $this->load->view('V_admin/umum/V_sidebar');
 $this->load->view('V_admin/umum/V_top_navigasi');
+$this->load->view('V_admin/V_index_admin');
 $this->load->view('V_admin/umum/V_footer');
 
 }
