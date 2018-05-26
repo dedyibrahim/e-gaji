@@ -13,6 +13,7 @@ echo  $valid['gambar']; ?> " alt=""><?php echo  $valid['nama']; ?>
 <span class=" fa fa-angle-down"></span>
 </a>
 <ul class="dropdown-menu dropdown-usermenu pull-right">
+<li><a href="<?php echo base_url('C_admin/pengaturan_admin');?>"><i class="fa fa-gear pull-right"></i>Pengaturan admin</a></li>
 <li><a href="<?php echo base_url('C_login/keluar');?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
 </ul>
 </li>
@@ -36,34 +37,49 @@ echo  $valid['gambar']; ?> " alt=""><?php echo  $valid['nama']; ?>
 </div>
 </div></a>
 
-<a href="<?php echo base_url('C_toko/konfirmasi_penjualan');?>">   
+<a href="#">   
 <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
 <div class="tile-stats">
-<div class="icon"><i class="fa fa-money"></i></div>
-<div class="count">0</div>
-<h3>Pendapatan</h3>
-<p>Pendapatan saat ini</p>
+<div class="icon"></div>
+<div class="count"><?php $id_user =$this->session->all_userdata();
+ $id_user['id_user'];
+ $this->db->select('saldo_perusahaan');
+ $data2 = $this->db->get('user')->row_array();
+ echo "Rp. ".number_format($data2['saldo_perusahaan']);?></div>
+<h3>Saldo perusahaan</h3>
+<p>Saldo bersih perusahaan</p>
 </div>
 </div></a>
 
-<a href="<?php echo base_url('C_toko/penjualan_selesai');?>">   
+<a href="#">   
 <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
 <div class="tile-stats">
-<div class="icon"><i class="fa fa-money"></i></div>
-<div class="count">0</div>
-<h3>Keuntungan</h3>
-<p>Keuntungan saat ini</p>
+<div class="icon"></div>
+<div class="count"><?php 
+
+$this->db->select('saldo');
+$saldo_karyawan = $this->db->get('karyawan');
+$data_saldo = 0;
+foreach ($saldo_karyawan->result_array() as $saldo){
+    
+     $data_saldo += $saldo['saldo'];
+}
+echo "Rp.".number_format($data_saldo);
+
+?></div>
+<h3>Saldo Karyawan</h3>
+<p>Saldo seluruh karyawan</p>
 </div>
 </div></a>
 
-<a href="<?php echo base_url('C_toko/penjualan_ditolak');?>">   
+<a href="<?php echo base_url('C_admin/pengeluaran_perusahaan');?>">   
 <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
 <div class="tile-stats">
-<div class="icon"><i class="fa fa-minus-square-o"></i></div>
+<div class="icon"><i class="fa fa-minus-square"></i></div>
 <div class="count">0</div>
 
-<h3>Pengeluaran</h3>
-<p>Pengeluaran saat ini</p>
+<h3>Data pengeluaran</h3>
+<p>Data pengeluaran perusahaa</p>
 </div>
 </div></a>
 </div>

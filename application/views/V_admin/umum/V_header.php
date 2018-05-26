@@ -6,7 +6,7 @@ $gambar   =$valid['gambar'];
 if ($level == NULL){
     redirect('C_login');
 }
-if($level == 'Admin'&& $status == 'aktif' )
+if($level == 'Admin'&& $status == 'Aktif' )
  {
 ?>
 <!DOCTYPE html>

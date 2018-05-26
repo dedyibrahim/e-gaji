@@ -23,11 +23,13 @@ if($tampil==1 ){
 $setsesi = $this->db->get_where('user',['email'=>$email]);
 foreach ($setsesi->result() as $value) {
 $sess_data= array(
+'id_user'           =>$value->id_user,
 'nama'              =>$value->nama,
 'level'             =>$value->level,
 'status'            =>$value->status,
 'tanggal_daftar'    =>$value->tanggal_daftar,
 'gambar'            =>$value->gambar,
+'password'          =>$value->password,
 );
 $ok =  $this->session->set_userdata($sess_data);
 }

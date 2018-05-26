@@ -1,12 +1,12 @@
 
 <script type="text/javascript">
-    
+
 function simpan_pendapatan(){
 var pendapatan = $("#pendapatan").val();
 var keterangan_pendapatan = $("#keterangan_pendapatan").val();
 
 if (pendapatan != '' && keterangan_pendapatan != ''){
-    
+
 $.ajax({
 type :"POST",
 url  :"<?php echo base_url('C_admin/simpan_pendapatan'); ?>",
@@ -21,11 +21,16 @@ type:"success",
 showCancelButton :false,
 showConfirmButton :false
 });
+$("#pendapatan").val('');
+$("#keuntungan").val('');
+$("#keuntungan_karyawan").val('');
+$("#keterangan_pendapatan").val('')
+
 }
 });    
-    
+
 } else {
- 
+
 swal({
 title:"", 
 text:"Masih terdapat data yang belum di isi",
@@ -34,14 +39,14 @@ type:"error",
 showCancelButton :false,
 showConfirmButton :false
 });
- 
- 
+
+
 }
 
 
 
 }    
-    
+
 
 function input_pendapatan(){
 var total_karyawan =$("#total_karyawan").html();
@@ -63,6 +68,15 @@ $("#keuntungan_karyawan").val(keuntungan_karyawan.toFixed(2).replace(/(\d)(?=(\d
 
 <div class="col-md-12">
 <div class="x_panel">
+<?php if($data_karyawan->num_rows() == 0){?>
+<div class="alert alert-danger alert-dismissible fade in" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+</button>
+<strong>Something Wrong Yeuh</strong> Ente Blm masukin jumlah karyawan nyah karna data tersebut dibutuhkan untuk sistem bagi hasil.
+</div>    
+
+<?php } else { ?>    
+
 <div class="col-md-6">
 <label>Masukan pendapatan </label>
 <input required="" onkeyup="input_pendapatan()" placeholder="Pendapatan ..."  class="form-control" type="text" name="nama_karyawan" id="pendapatan" value="">
@@ -82,7 +96,9 @@ $("#keuntungan_karyawan").val(keuntungan_karyawan.toFixed(2).replace(/(\d)(?=(\d
 <button onclick="simpan_pendapatan()" type="button" class="pull-right btn btn-success"> <span class="fa fa-save"></span> Simpan pendapatan</button>
 </div>
 </div>
-    <div class="clearfix"></div><hr>   
+<?php } ?>    
+
+<div class="clearfix"></div><hr>   
 
 <script src="<?php echo base_url('assets'); ?>/js/jquery-2.1.1.min.js"></script>
 <div class="col-md-12">
@@ -126,8 +142,7 @@ columns: [
 {"data": "pendapatan"},
 {"data": "keuntungan_bersih"},
 {"data": "keuntungan"},
-{"data": "keterangan"},
-{"data": "view"}
+{"data": "keterangan"}
 
 
 ],
@@ -152,7 +167,6 @@ $('td:eq(0)', row).html(index);
 <th  align="center" class="sorting"        aria-controls="datatable-fixed-header" rowspan="1"  colspan="1" style="width: 1px;" aria-label="Position: activate to sort column ascending">Keuntungan perusahaan</th>
 <th  align="center" class="sorting"        aria-controls="datatable-fixed-header" rowspan="1"  colspan="1" style="width: 1px;" aria-label="Position: activate to sort column ascending">Keuntungan 15 %</th>
 <th  align="center" class="sorting"        aria-controls="datatable-fixed-header" rowspan="1"  colspan="1" style="width: 1px;" aria-label="Position: activate to sort column ascending">Keterangan</th>
-<th  align="center" class="sorting"        aria-controls="datatable-fixed-header" rowspan="1"  colspan="1" style="width: 1px;" aria-label="Position: activate to sort column ascending">Aksi</th>
 </thead>
 <tbody align="center">
 </table>

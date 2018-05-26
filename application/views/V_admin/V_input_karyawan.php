@@ -33,6 +33,11 @@ type:"success",
 showCancelButton :false,
 showConfirmButton :false
 });
+$("#nama_karyawan").val('');
+$("#jabatan_karyawan").val('');
+$("#email_karyawan").val('');
+$("#password_karyawan").val('');
+$("#password_karyawan2").val('')
 }
 });
 }else{
@@ -63,7 +68,7 @@ showConfirmButton :false
 
 </div>
 <div class="col-md-6">
-<label>Nama karyawan </label>
+<label>Email karyawan </label>
 <input required="" placeholder="Email Karyawan ..." class="form-control" type="text" name="email_karyawan" id="email_karyawan" value="">
 <label>Password karyawan </label>
 <input required="" placeholder="Password karyawan ..." class="form-control" type="password" name="password_karyawan" id="password_karyawan" value="">
