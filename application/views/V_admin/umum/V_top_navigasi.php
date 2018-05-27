@@ -72,14 +72,14 @@ echo "Rp.".number_format($data_saldo);
 </div>
 </div></a>
 
-<a href="<?php echo base_url('C_admin/pengeluaran_perusahaan');?>">   
+<a href="<?php echo base_url('C_admin/permintaan_penarikan');?>">   
 <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
 <div class="tile-stats">
 <div class="icon"><i class="fa fa-minus-square"></i></div>
-<div class="count">0</div>
+<div class="count"> <?php echo $this->db->get_where('data_penarikan',array('status_penarikan'=>'Belum terkonfirmasi'))->num_rows() ?></div>
 
-<h3>Data pengeluaran</h3>
-<p>Data pengeluaran perusahaa</p>
+<h3>Data penarikan</h3>
+<p>Permintaan dana penarikan karyawan</p>
 </div>
 </div></a>
 </div>

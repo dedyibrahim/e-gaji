@@ -2,18 +2,21 @@
 <div class="menu_section">
 <h3>General</h3>
 <ul class="nav side-menu">
+
+<li><a><i class="fa fa-home"></i>HOME<span class="fa fa-chevron-down"></span></a>
+<ul class="nav child_menu">
+<li><a href="<?php echo base_url('C_karyawan'); ?>">HOME</a></li>
+</ul>
+</li>    
+    
 <li><a><i class="fa fa-money"></i>DATA KEUANGAN<span class="fa fa-chevron-down"></span></a>
 <ul class="nav child_menu">
-<li><a href="<?php echo  base_url('C_karyawan'); ?>">DATA TRANSAKSI</a></li>
+<li><a href="<?php echo  base_url('C_karyawan/data_transaksi'); ?>">DATA TRANSAKSI</a></li>
 <li><a href="<?php echo base_url('C_karyawan/data_penarikan'); ?>">DATA PENARIkAN</a></li>
 </ul>
 </li>
 
-<li><a><i class="fa fa-money"></i>SYSTEM KASBON<span class="fa fa-chevron-down"></span></a>
-<ul class="nav child_menu">
-<li><a href="<?php echo base_url('C_karyawan/buat_kasbon'); ?>">BUAT KASBON</a></li>
-</ul>
-</li>
+
 
 
 </ul>

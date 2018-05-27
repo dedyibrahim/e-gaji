@@ -34,8 +34,6 @@ $sess_data= array(
 $ok =  $this->session->set_userdata($sess_data);
 }
 
-echo print_r($sess_data);
-
 $ambil_sesi = $this->session->all_userdata();
 
 

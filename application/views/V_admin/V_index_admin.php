@@ -8,8 +8,6 @@ $chart = $this->db->get('data_pendapatan_perusahaan');
 
 ?>
 
-
-
 <style>
 canvas{
 -moz-user-select: none;
@@ -29,7 +27,7 @@ function(label){return  ' $' + label.value.toString().replace(/\B(?=(\d{3})+(?!\
 
 };
 var myChart = new Chart(ctx,{
-type: 'line',
+type: 'bar',
 data: {
 labels: [<?php 
 foreach ($chart->result_array() as $tampil_chart){
@@ -38,7 +36,7 @@ echo json_encode($tampil_chart['keterangan_pendapatan']),',';
 ?>],
 datasets: [{
 label: 'Pendapatan 15 %',
-//backgroundColor:"rgba(38, 185, 154, 0.31)",
+backgroundColor:"#36CAAB",
 borderColor:"rgba(38, 185, 154, 0.7)",
 pointBorderColor:"rgba(38, 185, 154, 0.7)",
 pointBackgroundColor:"rgba(38, 185, 154, 0.7)",
@@ -54,7 +52,7 @@ echo json_encode($tampil_chart['keuntungan']),',';
 ],
 },{
 label: 'Pendapatan bersih',
-//backgroundColor:"rgba(3, 88, 106, 0.3)",
+backgroundColor:"#3498DB",
 borderColor:"rgba(3, 88, 106, 0.70)",
 pointBorderColor:"rgba(3, 88, 106, 0.70)",
 pointBackgroundColor:"rgba(3, 88, 106, 0.70)",
@@ -71,7 +69,7 @@ echo json_encode($tampil_chart['keuntungan_bersih']),',';
 
 }, {
 label: 'Pendapatan penjualan',
-//backgroundColor:"rgba(3, 88, 106, 0.3)",
+backgroundColor:"#49A9EA)",
 borderColor:"rgba(3, 88, 106, 0.70)",
 pointBorderColor:"rgba(3, 88, 106, 0.70)",
 pointBackgroundColor:"rgba(3, 88, 106, 0.70)",

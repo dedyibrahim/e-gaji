@@ -4,7 +4,7 @@
 <ul class="nav side-menu">
 <li><a><i class="fa fa-home"></i>HOME<span class="fa fa-chevron-down"></span></a>
 <ul class="nav child_menu">
-<li><a href="<?php echo base_url('C_admin'); ?>">Home</a></li>
+<li><a href="<?php echo base_url('C_admin'); ?>">BERANDA</a></li>
 </ul>
 </li>
 
@@ -15,6 +15,12 @@
 </ul>
 </li>
 
+<li><a><i class="fa fa-exchange"></i>DATA PENARIKAN<span class="fa fa-chevron-down"></span></a>
+<ul class="nav child_menu">
+<li><a href="<?php echo  base_url('C_admin/permintaan_penarikan'); ?>">PERMINTAAN PENARIKAN</a></li>
+<li><a href="<?php echo base_url('C_admin/penarikan_selesai'); ?>">PENARIKAN SELESAI</a></li>
+</ul>
+</li>
 
 
 </ul>
@@ -22,7 +28,7 @@
 </div>
 <!-- /menu footer buttons -->
 <div class="sidebar-footer hidden-small">
-<a data-toggle="tooltip" data-placement="top" onclick="" title="Menu Utama" href="<?php echo base_url('C_menu'); ?>">
+<a data-toggle="tooltip" data-placement="top" onclick="" title="Menu Utama" href="#">
 <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
 </a>
 <a data-toggle="tooltip" data-placement="top" title="FullScreen">
@@ -31,7 +37,7 @@
 <a data-toggle="tooltip" data-placement="top" title="Lock">
 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
 </a>
-<a data-toggle="tooltip" data-placement="top" title="Logout" href="<?php echo base_url('C_login/keluar'); ?>">
+<a data-toggle="tooltip" data-placement="top" title="Logout" href="#">
 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
 </a>
 </div>

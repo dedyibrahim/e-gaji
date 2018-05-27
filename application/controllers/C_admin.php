@@ -37,6 +37,8 @@ $data = array(
 'nama_karyawan'    => $this->input->post('nama_karyawan'),
 'jabatan'          => $this->input->post('jabatan_karyawan'),
 'email'            => $this->input->post('email'),
+'level'            => "Karyawan",
+'status'           => $this->input->post('status'),
 'password'         => md5($this->input->post('password')),
 );
 $this->db->insert('karyawan',$data);
@@ -49,6 +51,8 @@ $id = $this->input->post('id_karyawan');
 $data = array(
 'nama_karyawan'    => $this->input->post('nama_karyawan'),
 'jabatan'          => $this->input->post('jabatan_karyawan'),
+'level'            => "Karyawan",
+'status'           => $this->input->post('status'),
 'email'            => $this->input->post('email'),
 'password'         => md5($this->input->post('password')),
 );
@@ -94,6 +98,27 @@ public function data_json_lihat_karyawan($id_karyawan){
 $this->load->model('Data_admin');
 header('Content-Type: application/json');
 echo $this->Data_admin->data_json_lihat_karyawan($id_karyawan);       
+
+}
+public function data_json_penarikan_karyawan($id_karyawan){
+
+$this->load->model('Data_admin');
+header('Content-Type: application/json');
+echo $this->Data_admin->data_json_penarikan_karyawan($id_karyawan);       
+
+}
+public function data_json_permintaan_penarikan(){
+
+$this->load->model('Data_admin');
+header('Content-Type: application/json');
+echo $this->Data_admin->data_json_permintaan_penarikan();       
+
+}
+public function data_json_permintaan_penarikan_selesai(){
+
+$this->load->model('Data_admin');
+header('Content-Type: application/json');
+echo $this->Data_admin->data_json_permintaan_penarikan_selesai();       
 
 }
 
@@ -227,6 +252,39 @@ $this->session->set_userdata(array('gambar'=>$this->upload->file_name));
 
 $this->pengaturan_admin();
 }
+}
+public function permintaan_penarikan(){
+
+
+
+$this->load->view('V_admin/umum/V_header');
+$this->load->view('V_admin/umum/V_sidebar');
+$this->load->view('V_admin/umum/V_top_navigasi');
+$this->load->view('V_admin/V_permintaan_penarikan');
+
+$this->load->view('V_admin/umum/V_footer');
+
+}
+public function penarikan_selesai(){
+
+$this->load->view('V_admin/umum/V_header');
+$this->load->view('V_admin/umum/V_sidebar');
+$this->load->view('V_admin/umum/V_top_navigasi');
+$this->load->view('V_admin/V_penarikan_selesai');
+
+$this->load->view('V_admin/umum/V_footer');
+
+}
+public function konfirmasi_penarikan(){
+    
+    $data = array(
+       'status_penarikan' =>"Terkonfirmasi", 
+       'waktu_penarikan' =>date('d/m/Y H:m:s' ), 
+        
+    );
+    
+    $this->db->update('data_penarikan',$data,array('id_penarikan'=>$this->uri->segment(3)));
+    $this->permintaan_penarikan();
 }
 
 }

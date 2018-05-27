@@ -16,6 +16,50 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `data_penarikan`
+--
+
+DROP TABLE IF EXISTS `data_penarikan`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `data_penarikan` (
+  `id_penarikan` int(11) NOT NULL AUTO_INCREMENT,
+  `id_karyawan` varchar(100) NOT NULL,
+  `jumlah_penarikan` decimal(65,0) NOT NULL,
+  `keterangan_penarikan` text NOT NULL,
+  `status_penarikan` varchar(100) NOT NULL,
+  `waktu_penarikan` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_penarikan`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `data_penarikan`
+--
+
+LOCK TABLES `data_penarikan` WRITE;
+/*!40000 ALTER TABLE `data_penarikan` DISABLE KEYS */;
+/*!40000 ALTER TABLE `data_penarikan` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `pemotongan_saldo` BEFORE UPDATE ON `data_penarikan` FOR EACH ROW BEGIN 
+   UPDATE karyawan SET saldo=saldo-NEW.jumlah_penarikan   WHERE id_karyawan = NEW.id_karyawan;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
 -- Table structure for table `data_pendapatan`
 --
 
@@ -30,7 +74,7 @@ CREATE TABLE `data_pendapatan` (
   `keuntungan_karyawan` varchar(100) NOT NULL,
   `status` varchar(100) NOT NULL,
   PRIMARY KEY (`id_data_pendapatan`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +83,6 @@ CREATE TABLE `data_pendapatan` (
 
 LOCK TABLES `data_pendapatan` WRITE;
 /*!40000 ALTER TABLE `data_pendapatan` DISABLE KEYS */;
-INSERT INTO `data_pendapatan` VALUES (1,'1','0','22500','7500',''),(2,'2','0','22500','7500',''),(3,'3','0','22500','7500',''),(4,'1','1','24000','8000',''),(5,'2','1','24000','8000',''),(6,'3','1','24000','8000',''),(7,'1','2','19500','6500',''),(8,'2','2','19500','6500',''),(9,'3','2','19500','6500',''),(10,'1','3','34500','11500',''),(11,'2','3','34500','11500',''),(12,'3','3','34500','11500',''),(13,'1','4','39000','13000',''),(14,'2','4','39000','13000',''),(15,'3','4','39000','13000',''),(16,'1','5','20100','10050',''),(17,'2','5','20100','10050','');
 /*!40000 ALTER TABLE `data_pendapatan` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -75,7 +118,7 @@ CREATE TABLE `data_pendapatan_perusahaan` (
   `keuntungan_bersih` varchar(100) NOT NULL,
   `keterangan_pendapatan` text NOT NULL,
   PRIMARY KEY (`id_data_pendapatan_perusahaan`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,7 +127,6 @@ CREATE TABLE `data_pendapatan_perusahaan` (
 
 LOCK TABLES `data_pendapatan_perusahaan` WRITE;
 /*!40000 ALTER TABLE `data_pendapatan_perusahaan` DISABLE KEYS */;
-INSERT INTO `data_pendapatan_perusahaan` VALUES (1,'0','150000','22500','127500','menjual ganja'),(2,'1','160000','24000','136000','penjualan korma'),(3,'2','130000','19500','110500','penjualan ceruluk'),(4,'3','230000','34500','195500','menjual kolek'),(5,'4','260000','39000','221000','menjual baso'),(6,'5','134000','20100','113900','penjualan obat ');
 /*!40000 ALTER TABLE `data_pendapatan_perusahaan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -99,7 +141,7 @@ CREATE TABLE `id_pendapatan` (
   `id_pendapatan` int(11) NOT NULL AUTO_INCREMENT,
   `pendapatan` varchar(100) NOT NULL,
   PRIMARY KEY (`id_pendapatan`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -108,7 +150,6 @@ CREATE TABLE `id_pendapatan` (
 
 LOCK TABLES `id_pendapatan` WRITE;
 /*!40000 ALTER TABLE `id_pendapatan` DISABLE KEYS */;
-INSERT INTO `id_pendapatan` VALUES (1,'0'),(2,'1'),(3,'2'),(4,'3'),(5,'4'),(6,'5');
 /*!40000 ALTER TABLE `id_pendapatan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,7 +172,7 @@ CREATE TABLE `karyawan` (
   `gambar` varchar(100) NOT NULL,
   `tanggal_daftar` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_karyawan`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -140,7 +181,6 @@ CREATE TABLE `karyawan` (
 
 LOCK TABLES `karyawan` WRITE;
 /*!40000 ALTER TABLE `karyawan` DISABLE KEYS */;
-INSERT INTO `karyawan` VALUES (1,'Dedi','Komisaris','dedi@gmail.com','21232f297a57a5a743894a0e4a801fc3',56550,'','','','2018-05-25 14:52:14'),(2,'Roni','Staff IT','roni@gmail.com','21232f297a57a5a743894a0e4a801fc3',56550,'','','','2018-05-25 14:52:15');
 /*!40000 ALTER TABLE `karyawan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,7 +211,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Dedy ibrahim','dedyibrahym23@gmail.com','21232f297a57a5a743894a0e4a801fc3','Aktif','Admin','588071267fd45248eec43631a1455158.jpg','2018-05-26 01:24:27',904400);
+INSERT INTO `user` VALUES (1,'Dedy ibrahim','dedyibrahym23@gmail.com','21232f297a57a5a743894a0e4a801fc3','Aktif','Admin','22568757b922440aca6073b4286f680c.JPG','2018-05-27 06:31:48',476000);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -184,4 +224,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-26  8:31:18
+-- Dump completed on 2018-05-27 17:43:33

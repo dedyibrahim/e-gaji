@@ -12,8 +12,8 @@
         <!-- /footer content -->
       </div>
     </div>
+    <script src="<?php echo  base_url(); ?>assets/js/md5.js" type="text/javascript"></script>
      <script src="<?php echo  base_url(); ?>assets/sweetalert.min.js" type="text/javascript"></script>
- <!-- jQuery -->
     <script src="<?php echo base_url('assets'); ?>/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="<?php echo base_url('assets'); ?>/vendors/bootstrap/dist/js/bootstrap.min.js"></script>

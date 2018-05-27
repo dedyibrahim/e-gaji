@@ -44,7 +44,9 @@ if($level == 'Karyawan')
     <link href="<?php echo base_url('assets'); ?>/vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
     <link href="<?php echo base_url('assets'); ?>/vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
     <link href="<?php echo  base_url(); ?>assets/css/sweetalert.css" rel="stylesheet" type="text/css"/>
-   
+   <script src="<?php echo  base_url(); ?>assets/dist/Chart.bundle.js"></script>
+	<script src="<?php echo  base_url(); ?>assets/dist/utils.js"></script>
+
   </head>
  
   <body class="nav-md" id="reload_karyawan"  >
@@ -60,7 +62,7 @@ if($level == 'Karyawan')
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                  <img src="<?php echo base_url('/uploads/user_thumb/');?><?php  $valid =  $this->session->all_userdata();
+                  <img src="<?php echo base_url('/uploads/karyawan_thumb/');?><?php  $valid =  $this->session->all_userdata();
                      echo  $valid['gambar']; ?> " alt="..." class="img-thumbnail profile_img">
               </div>
               <div class="profile_info">

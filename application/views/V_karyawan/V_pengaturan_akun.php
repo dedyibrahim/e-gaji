@@ -1,7 +1,7 @@
 
 <div class="x_panel">
 <div class="x_title">
-<h2>PENGATURAN ADMIN</h2>
+<h2>PENGATURAN AKUN</h2>
 <ul class="nav navbar-right panel_toolbox">
 <li class="pull-right "><a class="close-link"><i class="fa fa-close"></i></a>
 </li>
@@ -10,11 +10,11 @@
 </div>
 <div class="x_content">
 
-<?php $data_user = $this->db->get('user')->row_array();?>
+<?php foreach ($data_karyawan->result_array() as $data_user){}?>
 
 <div class="col-md-6">
 <label>Nama admin</label>    
-<input type="text" id="nama_admin" class="form-control" value="<?php echo $data_user['nama'];?>">
+<input type="text" id="nama_admin" class="form-control" value="<?php echo $data_user['nama_karyawan'];?>">
 <label>Email admin</label>  
 <input type="text" id="email_admin" class="form-control" value="<?php echo $data_user['email'];?>">
 <label>Status admin</label>  
@@ -26,7 +26,7 @@
 <div class="col-md-6">
 <div class="profile_pic">
 <label>FOTO PROFILE</label> 
-<img src="<?php echo base_url();?>uploads/user_thumb/<?php echo $data_user['gambar'];?>" alt="..." class="img-thumbnail profile_img">
+<img src="<?php echo base_url();?>uploads/karyawan_thumb/<?php echo $data_user['gambar'];?>" alt="" class="img-thumbnail profile_img">
 <br><br>
 <button class="btn btn-warning " data-toggle="modal" data-target=".bs-example-modal-sm"><span class="fa fa-save"></span> UPDATE FOTO</button>
 </div>
@@ -67,7 +67,7 @@ showConfirmButton :false
 
 $.ajax({
 type:"POST",
-url :"<?php  echo base_url('C_admin/ubah_admin') ?>",
+url :"<?php  echo base_url('C_karyawan/ubah_karyawan') ?>",
 data:"nama_admin="+nama_admin+"&email_admin="+email_admin,
 
 success:function(html){
@@ -99,7 +99,7 @@ showConfirmButton :false
                           <h4 class="modal-title" id="myModalLabel2">UPDATE FOTO ADMIN</h4>
                         </div>
                         <div class="modal-body">
-                            <form method="POST" action="<?php echo base_url('C_admin/update_foto') ?>" enctype="multipart/form-data" >
+                            <form method="POST" action="<?php echo base_url('C_karyawan/update_foto') ?>" enctype="multipart/form-data" >
           
                           <h4>Upload :</h4>
                           <input type="file" class="form-control" name="update_foto" >
