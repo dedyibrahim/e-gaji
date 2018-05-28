@@ -40,13 +40,13 @@ echo  $valid['gambar']; ?> " alt=""><?php echo  $valid['nama']; ?>
 <a href="#">   
 <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
 <div class="tile-stats">
-<div class="icon"></div>
-<div class="count"><?php $id_user =$this->session->all_userdata();
+    <div class="icon"><i class="fa fa-money"></i></div>
+<div class="count">&nbsp;</div>
+<h3><?php $id_user =$this->session->all_userdata();
  $id_user['id_user'];
  $this->db->select('saldo_perusahaan');
  $data2 = $this->db->get('user')->row_array();
- echo "Rp. ".number_format($data2['saldo_perusahaan']);?></div>
-<h3>Saldo perusahaan</h3>
+ echo "Rp. ".number_format($data2['saldo_perusahaan']);?></h3>
 <p>Saldo bersih perusahaan</p>
 </div>
 </div></a>
@@ -54,8 +54,9 @@ echo  $valid['gambar']; ?> " alt=""><?php echo  $valid['nama']; ?>
 <a href="#">   
 <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
 <div class="tile-stats">
-<div class="icon"></div>
-<div class="count"><?php 
+<div class="icon"><i class="fa fa-money"></i></div>
+<div class="count">&nbsp;</div>
+<h3><?php 
 
 $this->db->select('saldo');
 $saldo_karyawan = $this->db->get('karyawan');
@@ -66,8 +67,7 @@ foreach ($saldo_karyawan->result_array() as $saldo){
 }
 echo "Rp.".number_format($data_saldo);
 
-?></div>
-<h3>Saldo Karyawan</h3>
+?></h3>
 <p>Saldo seluruh karyawan</p>
 </div>
 </div></a>

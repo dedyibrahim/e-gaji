@@ -23,8 +23,6 @@ echo  $valid['gambar']; ?> " alt=""><?php echo  $valid['nama']; ?>
 </nav>
 </div>
 </div>
-<!-- /top navigation -->
-<div class="right_col" role="main" >
 <?php 
 $data = $this->session->all_userdata();
 $id = $data['id_karyawan'];    
@@ -32,25 +30,39 @@ $karyawan = $this->db->get_where('karyawan',array('id_karyawan'=>$id))->row_arra
 
 $saldo_perusahaan = $this->db->get('user')->row_array();
 ?>
-
-<div class="row top_tiles" style="margin:10px 0;">
-<div class="col-md-4 tile-stats" >
-<span>Saldo perusahaan</span>
-<h2>Rp.<?php echo number_format($saldo_perusahaan['saldo_perusahaan']); ?></h2>
-<span class="sparkline_two" style="height: 160px;"><canvas width="196" height="40" style="display: inline-block; width: 196px; height: 40px; vertical-align: top;"></canvas></span>
+<!-- /top navigation -->
+<div class="right_col" role="main" >
+<!-- top tiles -->
+<div  class="row top_tiles" >
+<a href="<?php echo base_url('C_karyawan');?>">   
+<div  class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
+<div class="tile-stats">
+<div class="icon"><i class="fa fa-building-o"></i></div>
+<div class="count">&nbsp;</div>
+<h3>Rp.<?php echo number_format($saldo_perusahaan['saldo_perusahaan']); ?></h3>
+<p>Total Saldo perusahaan</p>
 </div>
-<div class="col-md-4 tile" >
-<p align="center">
+</div></a>
 
-<span>Saldo anda saat ini</span>
-<h2>Rp.<?php echo number_format($karyawan['saldo']); ?></h2>
-<span class="sparkline_two" style="height: 160px; margin: 0px;"><canvas width="196" height="40" style="display: inline-block; width: 196px; height: 40px; vertical-align: top;"></canvas></span>
 
-</p>
+
+<a href="<?php echo base_url('C_karyawan');?>">   
+<div class="animated flipInY col-lg-4 col-md-7 col-sm-6 col-xs-12">
+<div class="tile-stats">
+<div class="icon"><i class="fa fa-money"></i></div>
+<div class="count">&nbsp;</div>
+<h3>Rp.<?php echo number_format($karyawan['saldo']); ?></h3>
+<p>Saldo yang anda miliki</p>
 </div>
-<div class="col-md-4 tile-stats pull-right">
-<span>Total penarikan saldo anda</span>
-<h2>Rp.<?php 
+</div></a>
+
+<a href="<?php echo base_url('C_karyawan');?>">   
+<div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
+<div class="tile-stats">
+<div class="icon"><i class="fa fa-exchange"></i></div>
+<div class="count">&nbsp;</div>
+
+<h3>Rp.<?php 
 $id = $this->session->all_userdata();
 $data = $this->db->get_where('data_penarikan',array('id_karyawan'=>$id['id_karyawan'],'status_penarikan'=>'Terkonfirmasi'));
 $jumlah = 0;
@@ -58,8 +70,12 @@ foreach ($data->result_array() as $jumlah_penarikan){
  $jumlah +=$jumlah_penarikan['jumlah_penarikan'];    
 }
 echo number_format($jumlah)
-?></h2>
-<span class="sparkline_three" style="height: 160px;"><canvas width="200" height="40" style="display: inline-block; width: 200px; height: 40px; vertical-align: top;"></canvas></span>
+?></h3>
+<p>Total saldo yang telah ditarik</p>
+</div>
+</div></a>
 </div>
 
-</div>
+
+
+
